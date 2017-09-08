@@ -57,6 +57,9 @@ public class Controller {
             return;
         }
 
+        // This is the bug: it checks that the source is valid a second
+        // time, rather than checking if the destination is valid
+        // if (!this.postcodeValidator.isValid(this.destinationPostCodeField.getText())) {
         if (!this.postcodeValidator.isValid(this.sourcePostCodeField.getText())) {
             new Alert("Destination post code isn't valid.").show();
             return;
